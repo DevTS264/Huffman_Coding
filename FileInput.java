@@ -85,7 +85,9 @@ public class FileInput extends JFrame
                             createFile.append("\nHuffman Codes for the file " + textFileInput.getName() + " are:-\n(Characters have been converted to their corresponding ASCII values)\n");
                             HuffmanCode code = new HuffmanCode(fileText);
                             code.encode();
-                            createFile.append(code.generateHuffmanCodes());
+                            String codeList = code.generateHuffmanCodes();
+                            createFile.append(codeList);
+                            new FileOutput(textFileInput.getParent(), textFileInput.getName(), fileText, codeList);
                         }
                         else
                         {
